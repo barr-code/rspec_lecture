@@ -24,6 +24,11 @@ class Patron
 		pub.expel(self)
 	end
 
+	def move(pub1, pub2)
+		pub1.expel(self)
+		pub2.admit(self)
+	end
+
 	def down(pint)
 		@intoxication << pint
 	end

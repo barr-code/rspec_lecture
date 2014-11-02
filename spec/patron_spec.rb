@@ -40,6 +40,22 @@ describe Patron do
 		expect{patron.leave(pub)}.to change{pub.patron_count}.by -1
 	end
 
+	it "moving from one pub to another leaves first pub" do
+		pub1 = double :pub
+		pub2 = double :pub
+		allow(pub2).to receive(:admit)
+		expect(pub1).to receive(:expel)
+		patron.move(pub1, pub2)
+	end
+
+	it "moving from one pub to another enters second pub" do
+		pub1 = double :pub
+		pub2 = double :pub
+		allow(pub1).to receive(:expel)
+		expect(pub2).to receive(:admit)
+		patron.move(pub1, pub2)
+	end
+
 	it "can glass another patron" do
 		hadi, sean = Patron.new, Patron.new
 		hadi.glass(sean)
