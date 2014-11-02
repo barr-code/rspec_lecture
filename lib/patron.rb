@@ -30,7 +30,10 @@ class Patron
 	end
 
 	def down(pint)
-		@intoxication << pint
+		unless pint.empty?
+			@intoxication << pint 
+			pint.empty!
+		end
 	end
 
 	def intoxication_level

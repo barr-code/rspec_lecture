@@ -1,25 +1,30 @@
 class Pint
 
-attr_accessor :name
+attr_accessor :name, :empty
 
-def initialize(name = "carling")
-	@name = name
+	def initialize(name = "carling")
+		@name = name
+		@empty = false
 	end
 
-def broken?
-	@broken = false
-end
+	def broken?
+		@broken = false
+	end
 
-def full?
-	@full = true
-end
-	
-def self.stella
-	new("stella")
-end
+	def empty?
+		@empty = false
+	end
 
-def self.kronenberg
-	new("kronenberg")
-  end
+	def empty!
+		@empty = true
+	end
+		
+	def self.stella
+		new("stella")
+	end
+
+	def self.kronenberg
+		new("kronenberg")
+	end
 
 end

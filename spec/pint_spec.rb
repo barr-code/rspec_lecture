@@ -9,8 +9,8 @@ let(:punter){double :punter}
 		expect(pint).not_to be_broken
 	end
 
-	it "should be full" do
-		expect(pint).to be_full
+	it "should not be empty" do
+		expect(pint).not_to be_empty
 	end
 
 
