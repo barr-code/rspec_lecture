@@ -41,6 +41,7 @@ class Patron
 	end
 
 	def glass(patron)
+		raise "Alright, that's enough now." if patron.hospitalized?
 		patron.wounds += 1
 	end
 

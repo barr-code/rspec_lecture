@@ -82,4 +82,10 @@ describe Patron do
 		expect(victoria).to be_hospitalized
 	end
 
+	it "can't glass someone who's already hospitalized" do
+		nicole, alex = Patron.new, Patron.new
+		3.times {nicole.glass(alex)}
+		expect{nicole.glass(alex)}.to raise_error "Alright, that's enough now."
+	end
+
 end
