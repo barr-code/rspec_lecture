@@ -1,0 +1,2 @@
+Example rspec tests for the [Makers Academy](http://www.makersacademy.com) October 2014 Cohort.
+Tests and classes based on [Hadi](http://www.github.com/schlap)'s [Pub Fight](https://github.com/Schlap/pub-fight) program.
