@@ -5,14 +5,14 @@ describe Pint do
 let(:pint){Pint.new("stella")}
 let(:punter){double :punter}
 
-	it "should not be broken" do
-		expect(pint).not_to be_broken
-	end
-
 	it "should not be empty" do
 		expect(pint).not_to be_empty
 	end
 
+	it "can be emptied" do
+		pint.empty!
+		expect(pint).to be_empty
+	end
 
 	it "should have a name" do
 		lager = Pint.new("stella")

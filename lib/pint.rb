@@ -7,12 +7,8 @@ attr_accessor :name, :empty
 		@empty = false
 	end
 
-	def broken?
-		@broken = false
-	end
-
 	def empty?
-		@empty = false
+		@empty == true
 	end
 
 	def empty!
